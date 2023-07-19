@@ -16,7 +16,7 @@ beforeEach(commonBeforeEach);
 afterEach(commonAfterEach);
 afterAll(commonAfterAll);
 
-/************************************** create */
+/* create */
 
 describe("create", function () {
   let newJob = {
@@ -35,7 +35,7 @@ describe("create", function () {
   });
 });
 
-/************************************** findAll */
+/* findAll */
 
 describe("findAll", function () {
   test("works: no filter", async function () {
@@ -141,7 +141,7 @@ describe("findAll", function () {
   });
 });
 
-/************************************** get */
+/* get */
 
 describe("get", function () {
   test("works", async function () {
@@ -171,7 +171,7 @@ describe("get", function () {
   });
 });
 
-/************************************** update */
+/* update */
 
 describe("update", function () {
   let updateData = {
@@ -215,7 +215,7 @@ describe("remove", function () {
   test("works", async function () {
     await Job.remove(testJobIds[0]);
     const res = await db.query(
-        "SELECT id FROM jobs WHERE id=$1", [testJobIds[0]]);
+      "SELECT id FROM jobs WHERE id=$1", [testJobIds[0]]);
     expect(res.rows.length).toEqual(0);
   });
 
